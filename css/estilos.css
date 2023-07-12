@@ -1,0 +1,259 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+header {
+    height: auto;
+    background-color: rgb(121, 152, 252);
+}
+
+/* HOME */
+main {
+    height: auto;
+    background-color: rgb(199, 220, 250);
+
+}
+
+.main_home {
+    height: 75vh;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "texto_home imagen_home";
+}
+
+.texto_home {
+    display: flex;
+    grid-area: texto_home;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family:fantasy;
+}
+
+.imagen_home {
+    display: flex;
+    grid-area: imagen_home;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CONTACTO */
+.seccion_contacto {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 50vh 25vh;
+    grid-template-areas:
+        "datosformulario mapa"
+        "motivo_contacto mapa"
+}
+
+.datosformulario
+{
+    grid-area: datosformulario;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.mapa {
+    display: flex;
+    align-items: center;
+    grid-area: mapa;
+}
+
+.motivodecontacto {
+    margin-top: auto;
+    margin-block-end: auto;
+    grid-area: motivo_contacto;
+
+}
+
+/* MAIN NOVEDADES */
+.seccion_novedades {
+    grid-area: main;
+    background-color: rgb(215, 231, 250);
+    /* como adentro adentro de mi MAIN hay filas y columnas pongo otro grid */
+    display: grid;
+
+    grid-template-columns: 1.5fr 3fr;
+    grid-template-rows: 28% 41% 30%;
+    grid-template-areas:
+        "banner banner banner"
+        "novedades novedades calendario"
+        "imagen imagen imagen";
+}
+
+/* NOVEDADES */
+.main_novedades
+{
+    height: 75vh;
+    display:grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "novedades calendario";
+}
+.novedades
+{
+    display:grid;
+    padding: 1rem;
+    grid-area: novedades;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.calendario 
+{
+    display: flex;
+    grid-area: calendario;
+    align-items: center;
+    justify-content:center;
+}
+
+
+.footer {
+    height: 18vh;
+    background-color: rgb(121, 152, 252);
+    display: flex;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "texto_footer  redes_sociales";
+}
+
+.texto_footer
+
+    {
+    display: flex;
+    grid-area: texto_footer;
+    width: 130vh;
+
+}
+
+.redes_sociales {
+    display: flex;
+    grid-area: redes_sociales;
+    justify-content: space-around;
+    width: 45vh;
+
+}
+/* MAIN NOSTROS */
+.main_nosotros
+{
+    height: 75vh;
+    display:grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 0.2fr 1fr;
+    grid-template-areas:
+        "titulo_nosotros titulo_nosotros"
+        "texto_nosotros foto_nosotros";
+}
+#titulo_nosotros
+{
+    display:flex;
+    grid-area: titulo_nosotros;
+    justify-content: center;
+    align-items: center;
+}
+.texto_nosotros
+{
+    display:flex;
+    padding: 1rem;
+    grid-area: texto_nosotros;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.foto_nosotros
+{
+    display:flex;
+    grid-area: foto_nosotros;
+    align-items: center;
+    justify-content: center;
+}
+
+/* DESKTOP FIRST */
+@media (max-width:1200px) {}
+
+/* PARA PASARLO A VISTA MOVIL. RESPONSIVE */
+@media (max-width:480px) {
+
+    /* MODIFICO MAIN MOVIL */
+    .main_home {
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "texto_home texto_home"
+            "imagen_home imagen_home";
+    }
+    /* MODIFICIO FOOTER */
+    .footer {
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            "redes_sociales redes_sociales";
+        justify-content: space-around;
+}
+
+    .texto_footer {
+        display: none;
+    }
+
+    /* MODIFICO CONTACTO */
+    .seccion_contacto {
+        height: auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 40% 20% 40%;
+        grid-template-areas:
+            "datosformulario motivo_contacto"
+            "datosformulario motivo_contacto"
+            "mapa mapa";
+    }
+    .mapa {
+        display:none;
+    } 
+
+    .motivodecontacto {
+        display: flex;
+        grid-area: motivo_contacto;
+
+    }
+    /* NOVEDADES MODIFICACION */
+    .main_novedades
+    {
+        height: auto;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 70% 30%;
+        grid-template-areas:
+            "novedades"
+            "calendario";
+    }
+    /* MAIN NOSOTROS */
+    .main_nosotros
+{
+    height: auto;
+    grid-template-columns: 100%;
+    grid-template-rows: 0.2fr 1fr 1fr;
+    grid-template-areas:
+        "titulo_nosotros titulo_nosotros"
+        "texto_nosotros texto_nosotros"
+        "foto_nosotros foto_nosotros";
+}
+    /* MAIN GALERIA */
+    .menu_galeria
+    {
+        display:flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
